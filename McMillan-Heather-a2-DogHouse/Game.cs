@@ -44,6 +44,10 @@ namespace MohawkGame2D
         {
             Window.ClearBackground(LightBlue);
 
+            DrawHouse(400, 150);
+
+            //make dog smaller higher up and bigger lower on screen?
+
             if (Input.IsMouseButtonDown(MouseInput.Left))
             {
                 DrawDog2(Input.GetMouseX(), Input.GetMouseY());
@@ -53,7 +57,70 @@ namespace MohawkGame2D
                 DrawDog1(Input.GetMouseX(), Input.GetMouseY());
             }
 
-                void DrawDog1(float x, float y)
+            //Trees
+            Draw.LineSize = 1;
+            Draw.LineColor = Black;
+            Draw.FillColor = DarkBrown;
+            Draw.Rectangle(50, 300, 100, 300);
+            Draw.Rectangle(650, 300, 100, 300);
+            //leaves
+            // use loop to draw leaves left tree
+                DrawLeaves(DarkGreen, 380, 30, 40, 6, 40, 20);
+                DrawLeaves(Green,     380, 30, 40, 6, 40, 0);
+                DrawLeaves(Green,     360, 30, 40, 6, 40, 20);
+                DrawLeaves(DarkGreen, 360, 30, 40, 6, 40, 0);
+                DrawLeaves(DarkGreen, 340, 30, 40, 7, 40, 20);
+                DrawLeaves(Green,     340, 30, 40, 7, 40, 0);
+                DrawLeaves(Green,     320, 30, 40, 7, 40, 20);
+                DrawLeaves(DarkGreen, 320, 30, 40, 7, 40, 0);
+                DrawLeaves(DarkGreen, 300, 30, 40, 7, 40, 20);
+                DrawLeaves(Green,     300, 30, 40, 7, 40, 0);
+                DrawLeaves(Green,     280, 30, 40, 7, 40, 20);
+                DrawLeaves(DarkGreen, 280, 30, 40, 7, 40, 0);
+                DrawLeaves(DarkGreen, 260, 30, 40, 7, 40, 20);
+                DrawLeaves(Green,     260, 30, 40, 7, 40, 0);
+                DrawLeaves(Green,     240, 30, 40, 7, 40, 20);
+                DrawLeaves(DarkGreen, 240, 30, 40, 7, 40, 0);
+                DrawLeaves(DarkGreen, 220, 30, 40, 7, 40, 20);
+                DrawLeaves(Green,     220, 30, 40, 7, 40, 0);
+                DrawLeaves(Green,     200, 30, 40, 7, 40, 20);
+                DrawLeaves(DarkGreen, 200, 30, 40, 7, 40, 0);
+                DrawLeaves(DarkGreen, 180, 30, 40, 6, 40, 20);
+                DrawLeaves(Green,     180, 30, 40, 6, 40, 0);
+                DrawLeaves(Green,     160, 30, 40, 6, 40, 20);
+                DrawLeaves(DarkGreen, 160, 30, 40, 6, 40, 0);
+                DrawLeaves(DarkGreen, 140, 30, 40, 5, 40, 20);
+                DrawLeaves(Green,     140, 30, 40, 5, 40, 0);
+            //Right tree
+            DrawLeaves(Green,    380, 30, 40, 7, 40, 20 + 560);
+            DrawLeaves(DarkGreen,380, 30, 40, 7, 40, 0 + 560);
+            DrawLeaves(DarkGreen,360, 30, 40, 8, 40, 20 + 540);
+            DrawLeaves(Green,    360, 30, 40, 8, 40, 0 + 540);
+            DrawLeaves(Green,    340, 30, 40, 9, 40, 20 + 520);
+            DrawLeaves(DarkGreen,340, 30, 40, 9, 40, 0 + 520);
+            DrawLeaves(DarkGreen,320, 30, 40, 9, 40, 20 + 520);
+            DrawLeaves(Green,    320, 30, 40, 9, 40, 0 + 520);
+            DrawLeaves(Green,    300, 30, 40, 9, 40, 20 + 520);
+            DrawLeaves(DarkGreen,300, 30, 40, 9, 40, 0 + 520);
+            DrawLeaves(DarkGreen,280, 30, 40, 9, 40, 20 + 520);
+            DrawLeaves(Green,    280, 30, 40, 9, 40, 0 + 520);
+            DrawLeaves(Green,    260, 30, 40, 9, 40, 20 + 520);
+            DrawLeaves(DarkGreen,260, 30, 40, 9, 40, 0 + 520);
+            DrawLeaves(DarkGreen,240, 30, 40, 9, 40, 20 + 520);
+            DrawLeaves(Green,    240, 30, 40, 9, 40, 0 + 520);
+            DrawLeaves(Green,    220, 30, 40, 9, 40, 20 + 520);
+            DrawLeaves(DarkGreen,220, 30, 40, 9, 40, 0 + 520);
+            DrawLeaves(DarkGreen,200, 30, 40, 9, 40, 20 + 520);
+            DrawLeaves(Green,    200, 30, 40, 9, 40, 0 + 520);
+            DrawLeaves(Green,    180, 30, 40, 8, 40, 20 + 540);
+            DrawLeaves(DarkGreen,180, 30, 40, 8, 40, 0 + 540);
+            DrawLeaves(DarkGreen,160, 30, 40, 7, 40, 20 + 560);
+            DrawLeaves(Green,    160, 30, 40, 7, 40, 0 + 560);
+            DrawLeaves(Green,    140, 30, 40, 6, 40, 20 + 580);
+            DrawLeaves(DarkGreen,140, 30, 40, 6, 40, 0 + 580);
+
+
+            void DrawDog1(float x, float y)
                 {
                     //Draw Back left leg
                     Draw.LineColor = DarkTan;
@@ -221,7 +288,59 @@ namespace MohawkGame2D
                 Draw.FillColor = Black;
                 Draw.Quad(x - 85, y - 35, x - 87, y - 25, x - 75, y - 32, x - 77, y - 22);
             }
+        } void DrawHouse(float x, float y)
+        {
+            //main house
+            Draw.LineSize = 1;
+            Draw.LineColor = Black;
+            Draw.FillColor = LightBrown;
+            Draw.Rectangle(250, 80, 300, 170);
+            //roof
+            Draw.LineSize = 1;
+            Draw.LineColor = Black;
+            Draw.FillColor = Orange;
+            Draw.Triangle(250, 80, 400, 0, 550, 80);
+            //Door
+            Draw.LineSize = 1;
+            Draw.LineColor = Black;
+            Draw.FillColor = DarkBrown;
+            Draw.Rectangle(370, 180, 60, 70);
+            //Doorknob
+            Draw.LineSize = 1;
+            Draw.LineColor = Black;
+            Draw.FillColor = Black;
+            Draw.Circle(420, 220, 5);
+            //Windows
+            Draw.LineSize = 1;
+            Draw.LineColor = Black;
+            Draw.FillColor = Yellow;
+            Draw.Square(290,110,40);
+            Draw.Square(470,110,40);
+            //window lines
+            Draw.LineSize = 1;
+            Draw.LineColor = Black;
+            Draw.FillColor = Black;
+            Draw.Line(290, 130, 330, 130);
+            Draw.Line(470, 130, 510, 130);
+            Draw.Line(310, 110, 310, 150);
+            Draw.Line(490, 110, 490, 150);
+            //grass
+            Draw.LineSize = 1;
+            Draw.LineColor = LimeGreen;
+            Draw.FillColor = LimeGreen;
+            Draw.Rectangle(0, 250, 800, 350);
         }
+        void DrawLeaves(Color LeafColor, int y, int w, int h, float count, int distance, int delay)
+        {
+            Draw.FillColor = LeafColor;
+            Draw.LineSize = 0;
+            for (int i = 0; i < count; i++)
+            {
+                Draw.Ellipse(distance * i + delay, y, w, h);
+            }
+
+        }
+
     }
 
 }
